@@ -22,6 +22,7 @@ if(inputCode === StatusCode.Forbidden) {
 let arr: number[] = [1, 2, 3, 4, 5];
 // OBJECT: A way to define an object with key-value pairs, more flexible to add, remove, and modify properties easily, it can include
 // the type not primitive or a function
+// use it when just need to defined a simple object, working with json or working with the ob
 let obj = {
     name: 'John',
     age: 30,
@@ -31,3 +32,35 @@ let obj = {
 };
 
 obj.action();
+
+
+type Product = {
+    productId: string;
+    name: string;
+    price: number;
+}
+
+interface ProductTech {
+    productId: string;
+    name: string;
+    price: number;
+    functionality(): void;
+}
+
+const laptop: Product = {
+    productId: 'LAP224',
+    name: 'Laptop Lenovo Ideadpad 3',
+    price: 20500000
+}
+
+console.log(laptop);
+
+const phone: ProductTech = {
+    productId: 'IP221',
+    name: 'iPhone 13',
+    price: 13000000,
+    functionality() {
+        console.log('Calling...');
+    }
+}
+
