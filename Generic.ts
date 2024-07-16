@@ -13,3 +13,16 @@ let out2 = example<number>(100);
 
 console.log(out1);
 console.log(out2);
+
+// GENERIC CONSTRAINT
+interface LengthWise {
+    length: number;
+}
+
+function loggingIdentity<T extends LengthWise>(arg: T): T {
+    console.log(arg.length);
+    return arg;
+}
+
+loggingIdentity({length: 10, value: 3});
+console.log(loggingIdentity("Hello"))

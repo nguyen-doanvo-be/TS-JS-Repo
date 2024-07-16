@@ -18,8 +18,15 @@ class Car implements Vehicle {
     start(): void {
         console.log("Car started");
     }
+
+    stop(): void {
+        console.log("Car stopped");
+    }
 }
 
+let car1 = new Car('Mercesdes');
+car1.start();
+car1.stop();
 // ABSTRACT: a class that cannot be instantiated but can be inherited
 abstract class Animal {
     name: string;
